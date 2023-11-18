@@ -99,7 +99,7 @@ logoutUser = async (req, res) => {
 registerUser = async (req, res) => {
     console.log("REGISTERING USER IN BACKEND");
     try {
-        const { firstName, lastName, email, username, password, passwordVerify } = req.body;
+        const { firstName, lastName, email, confirmEmail, username, password, passwordVerify } = req.body;
         console.log("create user: " + firstName + " " + lastName + " " + email + " " + password + " " + passwordVerify);
         if (!firstName || !lastName || !email || !username || !password || !passwordVerify) {
             return res
@@ -123,6 +123,14 @@ registerUser = async (req, res) => {
                 })
         }
         console.log("password and password verify match");
+        if (email !== confirmEmail) {
+            return res
+                .status(400)
+                .json({
+                    errorMessage: "Please enter the same email twice."
+                })
+        }
+        console.log("email and confirmEmail verify match");
         const existingUser = await User.findOne({ email: email });
         console.log("existingUser: " + existingUser);
         if (existingUser) {
