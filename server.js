@@ -18,10 +18,10 @@ mongoose
 
 
 // Auth routes
-app.post('/register', AuthController.registerUser)
-app.post('/login', AuthController.loginUser)
-app.get('/logout', AuthController.logoutUser)
-app.get('/loggedIn', AuthController.getLoggedIn)
+// app.post('/register', AuthController.registerUser)
+// app.post('/login', AuthController.loginUser)
+// app.get('/logout', AuthController.logoutUser)
+// app.get('/loggedIn', AuthController.getLoggedIn)
 // app.get("/get-users", (req, res) => {
 //   User.find()
 //     .then((users) => res.json(users))
@@ -40,10 +40,8 @@ app.get('/loggedIn', AuthController.getLoggedIn)
 //     .then((user) => res.json(user))
 //     .catch((err) => console.log(err));
 // });
-// app.use(express.static('./client/build'))
-// app.get('*', (req,res) =>{
-//   res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
-// })
+const authRouter = require('./routes/auth-router')
+app.use('/auth', authRouter)
 
 app.listen(port, () => {
   console.log(`Server is running on post ${port}`);
