@@ -8,9 +8,11 @@ const AuthController = require('./controllers/auth-controller')
 
 const app = express();
 
+app.use(cors({
+  origin: ["https://geocraftserver.azurewebsites.net/"],
+  credentials: true
+}))
 app.use(express.json());
-app.use(cors());
-
 mongoose
   .connect(process.env.MONGO_URI)
   .then(() => console.log("Database is connected..."))
