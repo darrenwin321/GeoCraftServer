@@ -1,0 +1,40 @@
+@use "../../styles/theme" as theme;
+
+.app-banner {
+  justify-content: space-between;
+}
+
+.name-input {
+  margin-top: -10px;
+}
+
+.banner-edit {
+  margin-top: 12px;
+  margin-left: 12px;
+}
+
+.home-button {
+  max-height: 5vh;
+  position: absolute;
+  right: 48%;
+  transform: translate(0%, -26px);
+}
+
+.account-dropdown {
+  right: 0;
+  max-height: '5vh';
+  z-index: 1000;
+  margin-right: '4px';
+
+  .dropdown-toggle::after {
+    display: none;
+  }
+}
+
+.dropdown-btn {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  width: 100%;
+  height: 100%;
+}

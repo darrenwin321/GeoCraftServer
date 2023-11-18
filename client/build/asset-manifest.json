@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/static/css/main.36ab9a54.css",
+    "main.js": "/static/js/main.c93ce690.js",
+    "static/js/787.c4e7f8f9.chunk.js": "/static/js/787.c4e7f8f9.chunk.js",
+    "static/media/bootstrap-icons.woff?": "/static/media/bootstrap-icons.449ad8adf6ae0424b7ed.woff",
+    "static/media/bootstrap-icons.woff2?": "/static/media/bootstrap-icons.dea24bf5a7646d8b84e7.woff2",
+    "static/media/GeoCraftGlobeWhite.png": "/static/media/GeoCraftGlobeWhite.2d47438d81fd6924c560.png",
+    "index.html": "/index.html",
+    "main.36ab9a54.css.map": "/static/css/main.36ab9a54.css.map",
+    "main.c93ce690.js.map": "/static/js/main.c93ce690.js.map",
+    "787.c4e7f8f9.chunk.js.map": "/static/js/787.c4e7f8f9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.36ab9a54.css",
+    "static/js/main.c93ce690.js"
+  ]
+}

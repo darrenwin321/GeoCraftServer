@@ -1,0 +1,36 @@
+@use "../../styles/theme" as theme;
+
+.sign-up-screen {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 85vh;
+    .sign-up-item {
+        width: 30vw;
+        background-color: theme.$superlightgray;
+    }
+    .name {
+        width: 14.3vw;
+        background-color: theme.$superlightgray;
+    }
+    .last-name {
+        width: 14.3vw;
+        margin-left: 2px;
+        background-color: theme.$superlightgray;
+    }
+    .sign-up-button {
+        background-color: theme.$slightlighterthanblack !important;
+        border-color: theme.$slightlighterthanblack;
+        height: 5vh;
+        width: 30vw;
+        margin-left: 10px;
+    }
+    .sign-up-button:hover {
+        background-color: gray !important;
+        border-color: gray;
+    }
+    .heading {
+        font-weight: bolder;
+    }
+}
