@@ -2,7 +2,7 @@ require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
-const port = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3001;
 const path = require('path')
 const AuthController = require('./controllers/auth-controller')
 
@@ -13,15 +13,13 @@ app.use(cors());
 
 mongoose
   .connect(process.env.MONGO_URI)
-  .then(() => console.log("Database is connected..."))
+  .then(() => console.log("DATABASE IS CONNECTED..."))
   .catch((err) => console.log(err));
 
-
 // Auth routes
-app.post('/register', AuthController.registerUser)
-app.post('/login', AuthController.loginUser)
-app.get('/logout', AuthController.logoutUser)
-app.get('/loggedIn', AuthController.getLoggedIn)
+const authRouter = require('./routes/auth-router')
+app.use('/auth', authRouter)
+
 // app.get("/get-users", (req, res) => {
 //   User.find()
 //     .then((users) => res.json(users))
@@ -41,11 +39,12 @@ app.get('/loggedIn', AuthController.getLoggedIn)
 //     .catch((err) => console.log(err));
 // });
 app.use(express.static('./client/build'))
+
 app.get('*', (req,res) =>{
   res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
 })
 
-app.listen(port, () => {
-  console.log(`Server is running on post ${port}`);
+app.listen(PORT, () => {
+  console.log(`Server is running on post ${PORT}`);
 });
 
